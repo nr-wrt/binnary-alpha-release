@@ -1,4 +1,4 @@
-# 基于 RM500U-CNAA/AB 升级OpenWrt固件说明:
+# RM500U-CNAA/AB 升级 OpenWrt固件说明:
 
 ## 升级:
 1. 直接用移远官方升级工具加载pac包, 升级即可;
@@ -6,20 +6,16 @@
 3. Windows系统安装移远驱动后, 可通过 RNDIS 网口访问 Openwrt 后台;
 4. Openwrt 后台 LAN 区 IP: 192.168.96.1, 用户名: root, 密码: 空;
 
-5. WiFi 默认未开启, 执行: 
+5. WiFi 默认未开启, 执行:  启动WiFi模块, 默认SSID: Openwrt-2g/5g, 不加密;
+```bash
+wifi config
+wifi up
 ```
-wifi config; 
-wifi up; 
-```
-启动WiFi模块, 默认SSID: Openwrt-2g/5g, 不加密;
 
-6. 自动拨号默认关闭, 执行: 
-```
+6. 自动拨号默认关闭, 执行: 开启自动驻网拨号, 可上电即有网络服务;
+```bash
 at_send at+qnetdevctl=1,3,1
 ```
-开启自动驻网拨号, 即可上电即有网络服务;
-
-
 
 ## 当前能力:
 1. 基于标准 Openwrt-21.05 稳定版本移植, 举报完整的基本功能和软件包开发模式;
@@ -34,3 +30,23 @@ at_send at+qnetdevctl=1,3,1
 1. Openwrt 的 WAN 口协议尚不支持 modem, 目前临时采用'空'配处理;
 2. LUCI 的 WiFi 配置页面尚未适配完成, WLAN相关配置, 需要uci指令完成;
 3. WLAN的 5G 吞吐性能测试 < 700Mbps (办公室环境);
+
+## 下载地址:
+
+链接：https://pan.baidu.com/s/1NJJtWCnB5zRCHhidSt7MWA?pwd=23gr 
+
+## UI截图
+### overview
+![image](https://github.com/nr-wrt/binnary-alpha-release/assets/3498094/1d44bf30-bee2-4768-ba2d-186f0139a38c)
+![image](https://github.com/nr-wrt/binnary-alpha-release/assets/3498094/f22337ee-3bd0-45ae-a39a-9cf0c96df829)
+### syslog
+![image](https://github.com/nr-wrt/binnary-alpha-release/assets/3498094/2e32bf4f-2e85-43da-83c7-47206af4d31a)
+### interface
+![image](https://github.com/nr-wrt/binnary-alpha-release/assets/3498094/50e8d7cf-8f1d-4727-bb78-c91c7e530351)
+![image](https://github.com/nr-wrt/binnary-alpha-release/assets/3498094/b3896ab7-c2ba-4ec7-b485-2e8dc70c161f)
+### firewall
+![image](https://github.com/nr-wrt/binnary-alpha-release/assets/3498094/1d1bce67-408f-4610-b24a-ec1419da68fc)
+
+### software packages
+![image](https://github.com/nr-wrt/binnary-alpha-release/assets/3498094/7fcea295-0923-4c84-a6c6-9cba9b66f00e)
+
